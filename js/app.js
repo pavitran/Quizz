@@ -88,7 +88,7 @@ function form(q,ans,ta,count) {
         	if (count <= 10) {
         		setTimeout(function() {
 				    form(questions[count].question,questions[count].answer,questions[count].ta,count);
-				}, 900);
+				}, 775);
         	} else {
         		$("#score").text(questions.score);
         		$(".correct_ans").text(questions.score);
@@ -103,7 +103,7 @@ function form(q,ans,ta,count) {
         	if (count <= 10){
         		setTimeout(function() {
 				    form(questions[count].question,questions[count].answer,questions[count].ta,count);
-				}, 900);
+				}, 775);
         	}
         	else{
         		$("#score").text(questions.score);
