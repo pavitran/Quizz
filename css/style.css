@@ -106,3 +106,7 @@ li,ul,.wrong,.correct{
     margin-bottom: 50px;
     border-radius: 3px;
 }
+.correct,.wrong{
+    position: absolute;
+    top: 0;
+}
