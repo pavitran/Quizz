@@ -27,8 +27,18 @@ body{
     margin-bottom: 0;
     padding-bottom: 0;
 }
-li,ul,.wrong,.correct{
+li,ul,.wrong,.correct,#score,#que_no{
     color: white;
+}
+#score,#que_no{
+    position: absolute;
+    top: 10px;
+}
+#score{
+    left: 30px;
+}
+#que_no{
+    right: 30px;
 }
 /*style for hidden modal*/
 .overlay {

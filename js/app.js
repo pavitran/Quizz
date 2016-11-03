@@ -62,10 +62,12 @@ $(document).ready(function () {
 	}
 	$("a.close").click(function(){
   		$(".overlay").fadeOut(1000);
+  		new_game(questions);
   	});
 });
 function new_game(questions) {
 	var count = 1;
+	questions.score = 0;
 	form(questions[count].question,questions[count].answer,questions[count].ta,count);
 }
 function next_question(score ,count) {
@@ -73,6 +75,10 @@ function next_question(score ,count) {
 }
 function form(q,ans,ta,count) {
 	$(".title").fadeIn(300,function() { $(this).text(q); });
+	$("#que_no").text(count+" out of 10");
+	$("#score").text("Correct " + questions.score);
+	que_no
+	que_no
 	console.log($(".answers").has("input").length);
 	if($(".answers").has("input").length !== 0){
 		$('.answers').empty();
