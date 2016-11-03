@@ -110,3 +110,8 @@ li,ul,.wrong,.correct{
     position: absolute;
     top: 0;
 }
+.option{
+    margin-top: 15px;
+    width: 250px;
+    height: 50px;
+}

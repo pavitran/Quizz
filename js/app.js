@@ -78,9 +78,9 @@ function form(q,ans,ta,count) {
 		$('.answers').empty();
 	}
 	for (i in ans) {
-		$("<input type=\"radio\" name=\"q" +count+ "\" value=\""+ans[i]+"\" id=\""+i+"\"><label for=\""+i+"\">"+ans[i]+"</label><br/>").hide().appendTo(".answers").delay(300).fadeIn(300);
+		$("<input type=\"button\" class=\"playButton option\" name=\"q" +count+ "\" value=\""+ans[i]+"\" id=\""+i+"\"></br>").hide().appendTo(".answers").delay(300).fadeIn(300);
 	}
-	$('input[name=q'+count+']').change(function(){
+	$('input[name=q'+count+']').click(function(){
 		count++;
 		console.log(ta);
 		console.log(this.value);
