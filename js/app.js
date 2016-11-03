@@ -78,18 +78,17 @@ function form(q,ans,ta,count) {
 		$('.answers').empty();
 	}
 	for (i in ans) {
-		$("<input type=\"button\" class=\"playButton option\" name=\"q" +count+ "\" value=\""+ans[i]+"\" id=\""+i+"\"></br>").hide().appendTo(".answers").delay(300).fadeIn(300);
+		$("<input type=\"button\" class=\"playButton option\" name=\"q" +count+ "\" value=\""+ans[i]+"\" id=\"a"+i+"\"></br>").hide().appendTo(".answers").delay(300).fadeIn(300);
 	}
 	$('input[name=q'+count+']').click(function(){
 		count++;
-		console.log(ta);
-		console.log(this.value);
         if (this.value == ans[ta]){
-        	$(".correct").finish().fadeIn(200,function() { $(this).text("Correct"); });
-        	$(".correct").delay(200).fadeOut(3000);
+        	$("#a"+ta).css("background-color","green");
         	questions.score += 1;
         	if (count <= 10) {
-        		form(questions[count].question,questions[count].answer,questions[count].ta,count);
+        		setTimeout(function() {
+				    form(questions[count].question,questions[count].answer,questions[count].ta,count);
+				}, 900);
         	} else {
         		$("#score").text(questions.score);
         		$(".correct_ans").text(questions.score);
@@ -98,10 +97,14 @@ function form(q,ans,ta,count) {
         	}
         	
         }else{
-        	$(".wrong").finish().fadeIn(200,function() { $(this).text("Correct answer " + ans[ta]); });
-        	$(".wrong").delay(200).fadeOut(3000);
-        	if (count <= 10)
-        		form(questions[count].question,questions[count].answer,questions[count].ta,count);
+        	console.log(this.id);
+        	$("#"+this.id).css("background-color","red");
+        	$("#a"+ta).css("background-color","green");
+        	if (count <= 10){
+        		setTimeout(function() {
+				    form(questions[count].question,questions[count].answer,questions[count].ta,count);
+				}, 900);
+        	}
         	else{
         		$("#score").text(questions.score);
         		$(".correct_ans").text(questions.score);
